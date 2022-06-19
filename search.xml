@@ -1,244 +1,253 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"sean3r.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="2015-04-20 本文介绍了催化剂领域发明专利申请的撰写方式对其创造性判断的重要影响。作者认为在可预见性较低的催化剂领域，发明专利申请中记载的技术问题和技术效果是评价创造性的重要依据。本文通过分析三个实际案例的创造性审查过程，从不同的方面提出催化剂领域专利申请文件的撰写技巧。并指出申请人在专利申请撰写时即需进行充分的检索从而对发明的创造性做出预期、并根据该预期在申请文件中补充必要的关于技术问题">
-<meta property="og:type" content="article">
-<meta property="og:title" content="催化剂领域发明专利申请的撰写与创造性审查">
-<meta property="og:url" content="https://sean3r.github.io/post/220619cuihuaji.html">
-<meta property="og:site_name" content="Sean&#39;s blog">
-<meta property="og:description" content="2015-04-20 本文介绍了催化剂领域发明专利申请的撰写方式对其创造性判断的重要影响。作者认为在可预见性较低的催化剂领域，发明专利申请中记载的技术问题和技术效果是评价创造性的重要依据。本文通过分析三个实际案例的创造性审查过程，从不同的方面提出催化剂领域专利申请文件的撰写技巧。并指出申请人在专利申请撰写时即需进行充分的检索从而对发明的创造性做出预期、并根据该预期在申请文件中补充必要的关于技术问题">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-19T09:47:58.000Z">
-<meta property="article:modified_time" content="2022-06-19T12:41:10.254Z">
-<meta property="article:author" content="Sean Ho">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://sean3r.github.io/post/220619cuihuaji.html">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://sean3r.github.io/post/220619cuihuaji.html","path":"/post/220619cuihuaji.html","title":"催化剂领域发明专利申请的撰写与创造性审查"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>催化剂领域发明专利申请的撰写与创造性审查 | Sean's blog</title>
-  
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Sean's blog</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">С�ʼ�</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Sean Ho</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">3</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sean3r.github.io/post/220619cuihuaji.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Sean Ho">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sean's blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="催化剂领域发明专利申请的撰写与创造性审查 | Sean's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          催化剂领域发明专利申请的撰写与创造性审查
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-19 17:47:58 / 修改时间：20:41:10" itemprop="dateCreated datePublished" datetime="2022-06-19T17:47:58+08:00">2022-06-19</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>2015-04-20</p>
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>搭建博客：GitHub Pages，Hexo，Aurora</title>
+    <url>//post/220321-githubpages.html</url>
+    <content><![CDATA[<p><strong>介绍</strong></p>
+<p>本地系统 windows 10。博客使用 GitHub Pages 网站托管，Hexo 博客框架，Hexo 主题选用 Aurora。</p>
+<p>使用博客时，用Markdown编辑器写内容。hexo 会将 md 文件生成静态网页，并发布至 GitHub，通过 GitHub Pages 所给二级域名直接访问。</p>
+<p>GitHub Pages</p>
+<blockquote>
+<p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p>
+<p>Git是一个分布式版本控制系统，而Github是一个集成了git的服务，它可以以网页或者客户端的形式，帮助用户把git本地的数据提交到远程的服务器里。</p>
+</blockquote>
+<p>Hexo 博客框架</p>
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<span id="more"></span>
+<p><strong>第一步</strong></p>
+<ol>
+<li>
+<p>下载 Node.js <a href="https://nodejs.org/en/">download</a>；安装；选默认配置；打开命令行输入<code>node -v</code>看到版本号即安装无误；</p>
+</li>
+<li>
+<p>下载 Git <a href="https://git-scm.com/">download</a>；默认配置安装；命令行 <code>git --version</code>，确认版本；</p>
+<ul>
+<li>
+<p>安装完 Git 会得到 Git Bash 命令行工具；</p>
+</li>
+<li>
+<p>Git 是一个分布式版本控制系统，而 Github 是一个集成了 Git 的服务。Git 可以帮助用户把本地的数据提交到远程的服务器里；</p>
+</li>
+</ul>
+</li>
+<li>
+<p>准备一个github.com账户，例如：用户名: zhangsan, email: <a href="mailto:zhangsan@abc.com">zhangsan@abc.com</a></p>
+</li>
+</ol>
+<p><strong>建立博客</strong></p>
+<ul>
+<li>
+<p>新建文件夹作为博客的根目录，例如：d:\myblog；</p>
+</li>
+<li>
+<p>打开 d:\myblog目录，在文件夹空白区域右击选择 Git Bash Here；</p>
+</li>
+<li>
+<p>命令行：<code>npm install hexo -cli -g</code>;  安装 Hexo，其中参数 -g 是 global，全局安装；</p>
+</li>
+<li>
+<p>命令行：<code>hexo -v</code>；查看是否安装成功</p>
+</li>
+<li>
+<p>命令行：在d:\myblog下，运行<code>hexo init</code>初始化；现在可以看到myblog目录下多了很多文件。</p>
+</li>
+<li>
+<p>命令行：<code>hexo s</code>；启动hexo博客服务。</p>
+<img src="/post/220321-githubpages/image-20220322150024246.png" class="" title="image-20220322150024246">
+</li>
+<li>
+<p>浏览器访问 <a href="http://localhost:4000/">http://localhost:4000/</a> 可以看到博客界面了。</p>
+</li>
+</ul>
+<p><strong>将本地博客同步至 <a href="http://Github.com">Github.com</a></strong></p>
+<ul>
+<li>
+<p>登录 <a href="http://github.com">github.com</a>;</p>
+</li>
+<li>
+<p>“github 首页 - New - create a new repository”，新建一个仓库；</p>
+<ul>
+<li>
+<p>owner：zhangsan; //输入自己的用户名，最好和 github 用户名相同；</p>
+</li>
+<li>
+<p>repository name：zhangsan；</p>
+</li>
+<li>
+<p>Description：随便写；</p>
+</li>
+<li>
+<p>选中 public；</p>
+</li>
+<li>
+<p>选中 “Add a README file”；</p>
+</li>
+<li>
+<p>点击 “Create repository”。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>使用 ssh 生成密钥对，用以和本地连接；</p>
+<ul>
+<li>打开 “d:\myblog” 文件夹，空白处右击鼠标，选择 “Git bash here”；</li>
+<li>命令行：<code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code>；新建密钥对；
+<ul>
+<li>“Enter file in which to save the key”；直接回车，文件名默认为id_ras.pub。若此处输入了新文件名，后续需要调整路径。最终的结果，id_ras.pub应处于 “c:\users\用户名\.ssh” 目录下；</li>
+<li>“Enter passphrase”；直接回车，则之后的ssh连接不再需要密码。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>公钥放至github</p>
+<ul>
+<li>登录 <a href="http://github.com">github.com</a>；</li>
+<li>“点击自己头像 - setting - ssh and GPG keys”；</li>
+<li>选择 “New SSH Key”；将本地 id_ras.pub文件内容copy 至此，保存；</li>
+</ul>
+</li>
+<li>
+<p>在 Git Bash 中配置 <a href="http://github.com">github.com</a> 账户信息</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"zhangsan"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"zhangsan@abc.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>测试本地和 <a href="http://github.com">github.com</a> 之间的连接；</p>
+<ul>
+<li>
+<p>Git Bash命令行：<code>ssh -T git@github.com</code>；</p>
+<p>若成功，会显示：“Hi username, You’ve successfully authenticated, but GitHub does not provide shell access.”</p>
+<p>若报错：&quot; <a href="mailto:git@github.com">git@github.com</a>: Permission denied ( publickey ) &quot;，应是id_ras.pub文件位置问题。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Hexo 配置修改</p>
+<ul>
+<li>
+<p>文本编辑器打开 “d:\myblog_config.yml” 文件</p>
+</li>
+<li>
+<p>“#deployment” 和 “#url” 部分，做如下修改：</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt"># Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: 'git'
+  repo: git@github.com:zhangsan/zhangsan.github.io.git
+  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;
+url: https:&#x2F;&#x2F;zhangsan.github.io
+# 注意是https<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>安装 hexo-deployer-git
+<ul>
+<li>Git Bash 输入 <code>npm install hexo-deployer-git --save</code>；</li>
+</ul>
+</li>
+<li>这样设置就做好了。之后使用下列命令将本地博客部署至 <a href="http://github.com">github.com</a>；</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token comment">#清除旧页面</span>
+hexo g <span class="token comment">#生成新页面</span>
+hexo d <span class="token comment">#本地同步至 GitHub Pages</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过浏览器访问 “<a href="http://zhangsan.github.io">zhangsan.github.io</a>” 。</li>
+</ul>
+<p><strong>博客使用</strong></p>
+<p>写博客，</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token builtin class-name">test</span>  <span class="token comment">#生成一个新文件：\source\_posts\test.md；</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重建页面并运行本地server</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
+hexo g
+hexo s <span class="token comment">#本地服务器运行，即预览</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>部署至 GitHub Pages</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
+hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>参考：hexo docs <a href="https://hexo.io/zh-cn/docs/github-pages.html">https://hexo.io/zh-cn/docs/github-pages.html</a></p>
+<p>写博客时，<a href="http://xn--test-4u7hr20hp5lm84a.md">直接编辑test.md</a>，或把md文件直接放入&quot;_post&quot;。</p>
+<p>hexo clean 会清除 db.json 和 public 所有内容，</p>
+<p>hexo g 会将source中所有的md文件转为html文件放至public 文件夹。</p>
+<p><strong>Hexo Aurora Theme设置</strong></p>
+<p>安装 Aurora 主题包</p>
+<ul>
+<li>博客根目录下打开 git bash；</li>
+<li><code>npm install hexo-theme-aurora --save</code>；安装aurora主题；</li>
+</ul>
+<p>生成Aurora主题配置</p>
+<ul>
+<li>打开文件夹：<code>d:\myblog\node_modules\hexo-theme-aurora</code>，找到_config.yml，更名为_config.aurora.yml；</li>
+<li>将 _config.aurora.yml 移动到根目录（这时根目录有_config.yml和_config.aurora.yml）；</li>
+</ul>
+<p>_config.yml修改</p>
+<p>修改 <code>permalink</code> 参数为 <code>/post/:title.html</code></p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;
+url: https:&#x2F;&#x2F;tridiamond.tech
+permalink: &#x2F;post&#x2F;:title.html
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>把 highlight 的启用改为 false<br>
+把 prismjs 的启用改为 true<br>
+把 prismjs 下的 preprocess 改为 false</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: &#39;&#39;
+  wrap: true
+  hljs: false
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: true
+  tab_replace: &#39;&#39;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>theme 改为 Aurora</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># Extensions
+## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;
+## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;
+theme: aurora
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重新生成并启动本地服务器</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo clean &amp; hexo g &amp; hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>通过 <a href="https://localhost:4000">https://localhost:4000</a> 访问你的博客。</p>
+<p><strong>Gitalk 评论组件</strong></p>
+<p>Gitalk 在_config.aurora.yml中设置。其中，clientID 和 clientsecret 需要从github获取，步骤如下：</p>
+<ul>
+<li>登录github，点击头像，选择 setting；</li>
+<li>选 developer settings；</li>
+<li>选 “OAuth Apps - New OAuth App”；</li>
+<li>Application name：随便取，</li>
+<li>homepage url：填 <a href="https://zhangsan.github.io">https://zhangsan.github.io</a></li>
+<li>description 随便写</li>
+<li>authorization callback URL：此处同homepage url, 注意，都是https</li>
+<li>点 “register application”；</li>
+<li>记录下 clientID 和 clientsecret，对应地填到 _config.aurora.yml 里。</li>
+</ul>
+<p>设置完，重建服务器后，须先登录 <a href="http://github.com">github.com</a> 确认绑定，之后就可以正常评论了。</p>
+<p>Gitalk 仅支持 GitHub 账户登录后进行评论。</p>
+<p>其他 gitalk 参数解释见官方文档：<a href="https://aurora.tridiamond.tech/guide/plugins.html#gitalk">https://aurora.tridiamond.tech/guide/plugins.html#gitalk</a></p>
+<p><strong>参考：</strong></p>
+<p>Hexo themes portal: <a href="https://hexo.io/themes/index.html">https://hexo.io/themes/index.html</a></p>
+<p>Aurora安装配置指南：<a href="https://aurora.tridiamond.tech/zh/guide/getting-started.html">https://aurora.tridiamond.tech/zh/guide/getting-started.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>催化剂领域发明专利申请的撰写与创造性审查</title>
+    <url>//post/220619cuihuaji.html</url>
+    <content><![CDATA[<p>2015-04-20</p>
 <p>本文介绍了催化剂领域发明专利申请的撰写方式对其创造性判断的重要影响。作者认为在可预见性较低的催化剂领域，发明专利申请中记载的技术问题和技术效果是评价创造性的重要依据。本文通过分析三个实际案例的创造性审查过程，从不同的方面提出催化剂领域专利申请文件的撰写技巧。并指出申请人在专利申请撰写时即需进行充分的检索从而对发明的创造性做出预期、并根据该预期在申请文件中补充必要的关于技术问题和技术效果方面的内容，这能够为申请人在后续的实质审查过程中提供有利保障。</p>
 <p>《专利法》第22条第3款规定“创造性，是指与现有技术相比，该发明具有突出的实质性特点和显著的进步”。《专利审查指南》规定：在评价发明是否具备创造性时，审查员不仅要考虑发明的技术方案本身，而且还要考虑发明所属技术领域、所解决的技术问题和产生的技术效果，将发明作为一个整体看待。《专利审查指南》中关于“技术问题”有这样的规定：在审查中应当客观分析并确定发明实际解决的技术问题，发明实际解决的技术问题是指为获得更好的技术效果而需对最接近的现有技术进行改进的技术任务。在实际审查过程中，由于审查员所认定的最接近的现有技术可能不同于申请人在说明书中所描述的现有技术。</p>
 <p>《专利审查指南》中关于“技术效果”也进行了描述：在创造性的判断过程中，考虑发明的技术效果有利于正确评价发明的创造性。如果发明与现有技术相比具有预料不到的技术效果，则不必再怀疑其技术方案是否具有突出的实质性特点，可以确定发明具备创造性。但是，对于“预料不到的技术效果”的描述应当是明确并具有依据的。那么，在申请文件撰写时对于技术问题和技术效果应该有怎样的考虑呢？为此，笔者仅以在审查工作中接触较多的催化剂领域的发明专利申请为切入点，探讨在撰写催化剂专利申请文件时对于技术问题和技术效果该如何考虑。</p>
@@ -287,73 +296,25 @@
 <p>（3）申请人在重视技术秘密保护的同时，也应当对发明创造性做出重要贡献的关键性技术效果进行记载，只有结论性或断言性的描述是不够的，还要对关键性技术效果所对应的效果实施例进行记载，其不仅为创造性判断提供有利证明，而且对于后续审查意见通知书的答复也提供了重要依据。</p>
 <p><strong>李晶晶 国家知识产权局专利局专利审查协作北京中心；王成荫 国家知识产权局专利局专利审查协作北京中心发表</strong><br>
 <strong>来源：中国知识产权杂志</strong></p>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/post/220321-githubpages.html" rel="prev" title="搭建博客：GitHub Pages，Hexo，Aurora">
-                  <i class="fa fa-chevron-left"></i> 搭建博客：GitHub Pages，Hexo，Aurora
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Sean Ho</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
-
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
-
-
-  
-
-
-
-
-
-</body>
-</html>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//post/hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
