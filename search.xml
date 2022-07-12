@@ -1,320 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>搭建博客：GitHub Pages，Hexo，Aurora</title>
-    <url>//post/220321-githubpages.html</url>
-    <content><![CDATA[<p><strong>介绍</strong></p>
-<p>本地系统 windows 10。博客使用 GitHub Pages 网站托管，Hexo 博客框架，Hexo 主题选用 Aurora。</p>
-<p>使用博客时，用Markdown编辑器写内容。hexo 会将 md 文件生成静态网页，并发布至 GitHub，通过 GitHub Pages 所给二级域名直接访问。</p>
-<p>GitHub Pages</p>
-<blockquote>
-<p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p>
-<p>Git是一个分布式版本控制系统，而Github是一个集成了git的服务，它可以以网页或者客户端的形式，帮助用户把git本地的数据提交到远程的服务器里。</p>
-</blockquote>
-<p>Hexo 博客框架</p>
-<blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<span id="more"></span>
-<p><strong>第一步</strong></p>
-<ol>
-<li>
-<p>下载 Node.js <a href="https://nodejs.org/en/">download</a>；安装；选默认配置；打开命令行输入<code>node -v</code>看到版本号即安装无误；</p>
-</li>
-<li>
-<p>下载 Git <a href="https://git-scm.com/">download</a>；默认配置安装；命令行 <code>git --version</code>，确认版本；</p>
-<ul>
-<li>
-<p>安装完 Git 会得到 Git Bash 命令行工具；</p>
-</li>
-<li>
-<p>Git 是一个分布式版本控制系统，而 Github 是一个集成了 Git 的服务。Git 可以帮助用户把本地的数据提交到远程的服务器里；</p>
-</li>
-</ul>
-</li>
-<li>
-<p>准备一个github.com账户，例如：用户名: zhangsan, email: <a href="mailto:zhangsan@abc.com">zhangsan@abc.com</a></p>
-</li>
-</ol>
-<p><strong>建立博客</strong></p>
-<ul>
-<li>
-<p>新建文件夹作为博客的根目录，例如：d:\myblog；</p>
-</li>
-<li>
-<p>打开 d:\myblog目录，在文件夹空白区域右击选择 Git Bash Here；</p>
-</li>
-<li>
-<p>命令行：<code>npm install hexo -cli -g</code>;  安装 Hexo，其中参数 -g 是 global，全局安装；</p>
-</li>
-<li>
-<p>命令行：<code>hexo -v</code>；查看是否安装成功</p>
-</li>
-<li>
-<p>命令行：在d:\myblog下，运行<code>hexo init</code>初始化；现在可以看到myblog目录下多了很多文件。</p>
-</li>
-<li>
-<p>命令行：<code>hexo s</code>；启动hexo博客服务。</p>
-<img src="/post/220321-githubpages/image-20220322150024246.png" class="" title="image-20220322150024246">
-</li>
-<li>
-<p>浏览器访问 <a href="http://localhost:4000/">http://localhost:4000/</a> 可以看到博客界面了。</p>
-</li>
-</ul>
-<p><strong>将本地博客同步至 <a href="http://Github.com">Github.com</a></strong></p>
-<ul>
-<li>
-<p>登录 <a href="http://github.com">github.com</a>;</p>
-</li>
-<li>
-<p>“github 首页 - New - create a new repository”，新建一个仓库；</p>
-<ul>
-<li>
-<p>owner：zhangsan; //输入自己的用户名，最好和 github 用户名相同；</p>
-</li>
-<li>
-<p>repository name：zhangsan；</p>
-</li>
-<li>
-<p>Description：随便写；</p>
-</li>
-<li>
-<p>选中 public；</p>
-</li>
-<li>
-<p>选中 “Add a README file”；</p>
-</li>
-<li>
-<p>点击 “Create repository”。</p>
-</li>
-</ul>
-</li>
-<li>
-<p>使用 ssh 生成密钥对，用以和本地连接；</p>
-<ul>
-<li>打开 “d:\myblog” 文件夹，空白处右击鼠标，选择 “Git bash here”；</li>
-<li>命令行：<code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code>；新建密钥对；
-<ul>
-<li>“Enter file in which to save the key”；直接回车，文件名默认为id_ras.pub。若此处输入了新文件名，后续需要调整路径。最终的结果，id_ras.pub应处于 “c:\users\用户名\.ssh” 目录下；</li>
-<li>“Enter passphrase”；直接回车，则之后的ssh连接不再需要密码。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>公钥放至github</p>
-<ul>
-<li>登录 <a href="http://github.com">github.com</a>；</li>
-<li>“点击自己头像 - setting - ssh and GPG keys”；</li>
-<li>选择 “New SSH Key”；将本地 id_ras.pub文件内容copy 至此，保存；</li>
-</ul>
-</li>
-<li>
-<p>在 Git Bash 中配置 <a href="http://github.com">github.com</a> 账户信息</p>
-</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"zhangsan"</span>
-<span class="token function">git</span> config --global user.email <span class="token string">"zhangsan@abc.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>测试本地和 <a href="http://github.com">github.com</a> 之间的连接；</p>
-<ul>
-<li>
-<p>Git Bash命令行：<code>ssh -T git@github.com</code>；</p>
-<p>若成功，会显示：“Hi username, You’ve successfully authenticated, but GitHub does not provide shell access.”</p>
-<p>若报错：&quot; <a href="mailto:git@github.com">git@github.com</a>: Permission denied ( publickey ) &quot;，应是id_ras.pub文件位置问题。</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Hexo 配置修改</p>
-<ul>
-<li>
-<p>文本编辑器打开 “d:\myblog_config.yml” 文件</p>
-</li>
-<li>
-<p>“#deployment” 和 “#url” 部分，做如下修改：</p>
-</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt"># Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: 'git'
-  repo: git@github.com:zhangsan/zhangsan.github.io.git
-  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># URL
-## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;
-url: https:&#x2F;&#x2F;zhangsan.github.io
-# 注意是https<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>安装 hexo-deployer-git
-<ul>
-<li>Git Bash 输入 <code>npm install hexo-deployer-git --save</code>；</li>
-</ul>
-</li>
-<li>这样设置就做好了。之后使用下列命令将本地博客部署至 <a href="http://github.com">github.com</a>；</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token comment">#清除旧页面</span>
-hexo g <span class="token comment">#生成新页面</span>
-hexo d <span class="token comment">#本地同步至 GitHub Pages</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>通过浏览器访问 “<a href="http://zhangsan.github.io">zhangsan.github.io</a>” 。</li>
-</ul>
-<p><strong>博客使用</strong></p>
-<p>写博客，</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token builtin class-name">test</span>  <span class="token comment">#生成一个新文件：\source\_posts\test.md；</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>重建页面并运行本地server</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
-hexo g
-hexo s <span class="token comment">#本地服务器运行，即预览</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>部署至 GitHub Pages</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
-hexo g
-hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>参考：hexo docs <a href="https://hexo.io/zh-cn/docs/github-pages.html">https://hexo.io/zh-cn/docs/github-pages.html</a></p>
-<p>写博客时，<a href="http://xn--test-4u7hr20hp5lm84a.md">直接编辑test.md</a>，或把md文件直接放入&quot;_post&quot;。</p>
-<p>hexo clean 会清除 db.json 和 public 所有内容，</p>
-<p>hexo g 会将source中所有的md文件转为html文件放至public 文件夹。</p>
-<p><strong>Hexo Aurora Theme设置</strong></p>
-<p>安装 Aurora 主题包</p>
-<ul>
-<li>博客根目录下打开 git bash；</li>
-<li><code>npm install hexo-theme-aurora --save</code>；安装aurora主题；</li>
-</ul>
-<p>生成Aurora主题配置</p>
-<ul>
-<li>打开文件夹：<code>d:\myblog\node_modules\hexo-theme-aurora</code>，找到_config.yml，更名为_config.aurora.yml；</li>
-<li>将 _config.aurora.yml 移动到根目录（这时根目录有_config.yml和_config.aurora.yml）；</li>
-</ul>
-<p>_config.yml修改</p>
-<p>修改 <code>permalink</code> 参数为 <code>/post/:title.html</code></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># URL
-## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;
-url: https:&#x2F;&#x2F;tridiamond.tech
-permalink: &#x2F;post&#x2F;:title.html
-permalink_defaults:
-pretty_urls:
-  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
-  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>把 highlight 的启用改为 false<br>
-把 prismjs 的启用改为 true<br>
-把 prismjs 下的 preprocess 改为 false</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">highlight:
-  enable: false
-  line_number: true
-  auto_detect: false
-  tab_replace: &#39;&#39;
-  wrap: true
-  hljs: false
-prismjs:
-  enable: true
-  preprocess: true
-  line_number: true
-  tab_replace: &#39;&#39;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>theme 改为 Aurora</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># Extensions
-## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;
-## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;
-theme: aurora
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>重新生成并启动本地服务器</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo clean &amp; hexo g &amp; hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>通过 <a href="https://localhost:4000">https://localhost:4000</a> 访问你的博客。</p>
-<p><strong>Gitalk 评论组件</strong></p>
-<p>Gitalk 在_config.aurora.yml中设置。其中，clientID 和 clientsecret 需要从github获取，步骤如下：</p>
-<ul>
-<li>登录github，点击头像，选择 setting；</li>
-<li>选 developer settings；</li>
-<li>选 “OAuth Apps - New OAuth App”；</li>
-<li>Application name：随便取，</li>
-<li>homepage url：填 <a href="https://zhangsan.github.io">https://zhangsan.github.io</a></li>
-<li>description 随便写</li>
-<li>authorization callback URL：此处同homepage url, 注意，都是https</li>
-<li>点 “register application”；</li>
-<li>记录下 clientID 和 clientsecret，对应地填到 _config.aurora.yml 里。</li>
-</ul>
-<p>设置完，重建服务器后，须先登录 <a href="http://github.com">github.com</a> 确认绑定，之后就可以正常评论了。</p>
-<p>Gitalk 仅支持 GitHub 账户登录后进行评论。</p>
-<p>其他 gitalk 参数解释见官方文档：<a href="https://aurora.tridiamond.tech/guide/plugins.html#gitalk">https://aurora.tridiamond.tech/guide/plugins.html#gitalk</a></p>
-<p><strong>参考：</strong></p>
-<p>Hexo themes portal: <a href="https://hexo.io/themes/index.html">https://hexo.io/themes/index.html</a></p>
-<p>Aurora安装配置指南：<a href="https://aurora.tridiamond.tech/zh/guide/getting-started.html">https://aurora.tridiamond.tech/zh/guide/getting-started.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>催化剂领域发明专利申请的撰写与创造性审查</title>
-    <url>//post/220619cuihuaji.html</url>
-    <content><![CDATA[<p>2015-04-20</p>
-<p>本文介绍了催化剂领域发明专利申请的撰写方式对其创造性判断的重要影响。作者认为在可预见性较低的催化剂领域，发明专利申请中记载的技术问题和技术效果是评价创造性的重要依据。本文通过分析三个实际案例的创造性审查过程，从不同的方面提出催化剂领域专利申请文件的撰写技巧。并指出申请人在专利申请撰写时即需进行充分的检索从而对发明的创造性做出预期、并根据该预期在申请文件中补充必要的关于技术问题和技术效果方面的内容，这能够为申请人在后续的实质审查过程中提供有利保障。</p>
-<p>《专利法》第22条第3款规定“创造性，是指与现有技术相比，该发明具有突出的实质性特点和显著的进步”。《专利审查指南》规定：在评价发明是否具备创造性时，审查员不仅要考虑发明的技术方案本身，而且还要考虑发明所属技术领域、所解决的技术问题和产生的技术效果，将发明作为一个整体看待。《专利审查指南》中关于“技术问题”有这样的规定：在审查中应当客观分析并确定发明实际解决的技术问题，发明实际解决的技术问题是指为获得更好的技术效果而需对最接近的现有技术进行改进的技术任务。在实际审查过程中，由于审查员所认定的最接近的现有技术可能不同于申请人在说明书中所描述的现有技术。</p>
-<p>《专利审查指南》中关于“技术效果”也进行了描述：在创造性的判断过程中，考虑发明的技术效果有利于正确评价发明的创造性。如果发明与现有技术相比具有预料不到的技术效果，则不必再怀疑其技术方案是否具有突出的实质性特点，可以确定发明具备创造性。但是，对于“预料不到的技术效果”的描述应当是明确并具有依据的。那么，在申请文件撰写时对于技术问题和技术效果应该有怎样的考虑呢？为此，笔者仅以在审查工作中接触较多的催化剂领域的发明专利申请为切入点，探讨在撰写催化剂专利申请文件时对于技术问题和技术效果该如何考虑。</p>
-<span id="more"></span>
-<p><strong>一、催化剂领域的专利申请特点</strong></p>
-<p>近年来，随着催化剂的研究和产业化步伐日趋加快，催化剂领域的专利申请量快速增长，而催化剂本身的结构、物理化学性质、催化作用及其催化反应过程都是极其复杂的，因此，催化剂领域的发明专利申请具有学科渗透性强、可预见性低的特点。催化剂领域创造性的判断往往是专利审查工作的难点之一，针对催化剂领域发明专利申请的特点，其申请文件中涉及的所要解决的技术问题以及取得的技术效果是审查员判断创造性时需要着重考虑的内容，因此，这部分内容也当然地成为申请人撰写该领域申请文件时应该重点关注的内容。</p>
-<p>然而在多年的专利审查实践中，笔者注意到：由于催化剂领域发明专利申请撰写的缺陷，导致申请人在实质审查过程中，难以对发明申请做出有利的修改或者做出有理有据的意见陈述，最终难以获得专利权。而事实上，这样的未被授权的专利申请实质上是具有创造性的，而仅仅是由于申请文件撰写的先天的缺陷而导致了可能无法弥补的后果。因此，提高催化剂领域专利申请文件的撰写质量是必要的也是重要的。</p>
-<p>本文从创造性审查的角度出发，通过分析三个催化剂领域的实际案例，从三个不同的方面提出催化剂领域专利申请文件的撰写技巧。</p>
-<p><strong>二、实际案例</strong></p>
-<p><strong>1、重视与发明专利的发明点相关的技术问题</strong></p>
-<p>为了使专利权保护范围最大化，申请人通常会将保护范围最大的技术方案记载在发明专利申请中，并着重对该技术方案进行清楚、完整地撰写。具体到催化剂领域，申请人更希望获得对催化剂产品的保护，也相对重视催化剂产品权利要求的撰写。而对于有可能涉及发明实际发明点的催化剂的制备方法则往往忽略，要么没有将其写入权利要求，要么只是在申请文件中简单地撰写其制备方法。</p>
-<p><strong>【案例1】权利要求1：一种用于正丁烯双键迁移制丁烯-2的镍基催化剂，以重量百分比计包括以下组分：</strong></p>
-<p><strong>a)5～75％的镍或其氧化物；</strong></p>
-<p><strong>b)1～10％的钛或其氧化物；</strong></p>
-<p><strong>c)15～95％的载体氧化铝；</strong></p>
-<p>本案的权利要求书中仅涉及镍基催化剂的产品权利要求，并未对催化剂的制备方法要求保护；本申请说明书中记载的所要解决的技术问题是提供一种具有正丁烯异构化率高、总烯烃收率高、耐硫性能高的催化剂。同时，在说明书的有益的技术效果部分有这样的涉及催化剂制备方法的记载：“本发明的镍基催化剂制备方法，在氧化铝溶胶中加入镍盐水溶液或镍氨络合液，经静止老化或加热分解络合镍离子得到镍铝凝胶，经焙烧、还原可得到Ni/Al2O3催化剂，镍离子吸附于高比表面积的氧化铝溶胶粒子，纳米溶胶粒子提供了大量的表面积以分散镍组分，得到高分散高活性的镍基催化剂，催化剂上的微孔提供了小晶粒镍粒子的“镶嵌空间”，束缚了镍粒子的迁移，提高了催化剂的稳定性”。</p>
-<p>同时，本案的实施例对权利要求1请求保护的包含Ni、Ti、氧化铝组分的催化剂的制备方法进行了详细记载，其包括具体的制备步骤，具体的原料，由点值限定的原料加入量和反应条件参数等。</p>
-<p>不难看出，本案的发明点实质在于催化剂的制备方法，该发明点实质所对应的技术问题是提供一种新的制备方法，即在氧化铝溶胶中添加活性组分经静止老化或加热分解得到催化剂前躯体凝胶，经焙烧、还原得到催化剂产品，采用该制备方法制备得到的催化剂具有优异的催化性能。但是，发明内容部分并未记载该技术问题，且对于制备方法的记载仅仅是简单的描述，其并不是完整的技术方案，也没有涉及引入另一活性组分Ti的步骤，更没有涉及活性组分Ti何时、以何种形式加入。</p>
-<p>审查员在第一次审查意见通知书中指出：权利要求1相对于对比文件1不具备创造性；申请人为了克服创造性的缺陷，对权利要求1进行修改，由于本申请催化剂的制备方法不同于对比文件1的制备方法，考虑将制备方法限定到权利要求中是常见的修改方式。</p>
-<p>就本案而言，说明书背景技术部分对于本发明的技术领域描述的足够详细，可以看出申请人对该技术领域的发展进行了充分的检索，同时，在发明的有益的技术效果部分也对本发明的发明点进行了充分的解释和说明。也就是说，申请人知晓本案的发明点在于催化剂的制备方法，但是，为了寻求最大的保护范围，申请人仅对涉及催化剂产品的技术方案进行了概括限定，没有对发明点实质所对应的技术问题进行深究，从而忽略了对涉及发明点实质的技术方案的考虑；因此，在撰写申请文件时，申请人没有将与发明点相关的技术问题写入申请文件中，更没有对涉及发明点实质的催化剂制备方法的技术方案进行完整的概括记载。</p>
-<p>对申请文件的修改应该符合《专利法》第33条的规定，本案的说明书发明内容部分并没有对催化剂的制备方法进行适度的概括，导致申请人在修改权利要求书时，只能选择对实施例中的具体的催化剂的制备方法进行概括后补入产品权利要求中，或直接将实施例中所记载的具体的制备方法补入产品权利要求中。由于催化剂领域的发明专利申请在实施例部分所记载的均为具体的产品以及参数，因此，采用概括的方式很容易造成修改超范围的问题，而采用将整体实施例补入权利要求中进行限定，则必然地会导致保护范围的大大缩小。</p>
-<p>为了避免上述问题，申请人在撰写申请文件时，应当首先考虑其发明点是什么，从发明点实质出发，寻找其真正解决的技术问题，从而将表明发明点的特征写入权利要求书或者说明书中，为后续的意见陈述或申请文件的修改留有充分的余地，保证获得合理的保护范围。</p>
-<p>因此，在撰写说明书时，不仅要对发明专利申请区别于现有技术的发明点实质有所把握，还应当对其后期的修改进行考虑，在撰写说明书的发明内容时，要善于将保护范围由点扩展到面，对涉及发明点实质的技术方案引起足够的重视。</p>
-<p><strong>2、对于创造性判断具有重要作用的对比实施例</strong></p>
-<p>催化剂领域的审查中，不同活性组分之间是否具有“协同作用”是判断发明创造性的重要判断依据。催化剂在化学组成、离子价态、酸碱性、晶体及表面结构、孔分布、机械强度以及最终催化剂的活性、选择性、寿命及成本高低均是“协同作用”的考虑因素。而这些考虑因素最直观的表达就是申请人所做的各种表征数据以及活性等性能测试的对比实施例。因此，在撰写说明书具体实施例时，申请人需要对上述具有表征“协同作用”的对比实施例引起重视。</p>
-<p><strong>【案例2】：权利要求1：一种用于选择性催化还原氮氧化物的催化剂，其特征在于载体为TiO2，活性组分为Sb2O3 -V2O5 -Nb2O5复合氧化物。</strong></p>
-<p>权利要求1与最接近的现有技术的区别在于权利要求1限定了加入的活性组分为Sb2O3 -V2O5 -Nb2O5氧化物，而对比文件1中为WO3- V2O5 -Nb2O5氧化物。对于上述区别技术特征，审查员又检索到了对比文件2，其公开了一种用于NH3-SCR去除氮氧化物的催化剂，发现在SO2存在条件下添加Sb的V2O5- TiO2催化剂活性比含W的V2O5- TiO2的催化活性更高，即Sb-V2O5/TiO2可以取代W-V2O5/TiO2提高催化剂活性并增强催化剂在低温下抗SO2的中毒性能；据此，审查员采用对比文件1结合对比文件2评述了本案权利要求1的创造性。</p>
-<p>申请人在答复审查意见通知书时指出“本申请的催化剂中，Sb与Nb，分别补充了NO选择性催化还原反应所需的催化剂两个基本性质，即：氧化还原性能及表面酸性，添加剂中的Sb能够优先提高催化剂的氧化还原性能，而Nb则能够提高催化剂表面酸性，增加催化剂对还原剂NH3的吸附能力，所以添加剂中的Sb和Nb是不可或缺的两个组分，两者的同时存在才能够提高催化剂的活性，使催化剂的活性显著提高，活性窗口加宽，二者具有协同作用。”但是，在原始申请的说明书实施例部分并未对该“协同作用”进行记载，更没有记载具体实验数据，同时，申请人的意见陈述也难以证明权利要求1具有创造性。</p>
-<p>相反，如果申请人在撰写申请文件之前，就对本发明的技术方案进行充分的检索，对技术方案的创造性做出合理预期，认识到本发明与现有技术的改进点在于同时使用了两种活性组分并产生了“协同效应”，将描述“协同效应”的具体实施例记载在说明书中，将更有利于申请人在创造性问题上的陈述说理。</p>
-<p>常见的描述“协同作用”的具体实施例包括对比例，具体到本案，申请人在撰写说明书实施例时，可以将同时添加Sb和Nb的催化剂与单独添加Sb或Nb的催化剂进行催化活性的比较，通过对比试验例来证明Sb2O3和Nb2O5发生了相互作用，而不是仅仅单独表现出其各自的性能，而且这种相互作用的物质再与V2O5发生协同效应，使催化剂的活性显著提高，活性窗口加宽。</p>
-<p>由此可见，在申请文件撰写之初，就需要对发明技术方案的创造性做出预期，通过在说明书中记载有效的对比实施例，不仅有利于实质审查，而且也为专利申请在后续的专利权保护时提供保障，更有利于专利权的稳定。</p>
-<p><strong>3、发明获得的技术效果所对应的效果实施例</strong></p>
-<p>通常，申请人在撰写说明书时，会在说明书的发明内容部分记载发明所取得的技术效果，或在答复审查意见通知书时，对发明所具有的技术效果进行详细的陈述，以通过上述关键性技术效果区别于现有技术，来证明发明具有创造性。但是，对于催化剂领域的申请来说，体现技术效果的有利载体是实验数据，因此，申请人在撰写说明书时，应当对上述关键性技术效果所对应的效果实施例有所考虑，而非仅仅是技术效果的简单记载。</p>
-<p><strong>【案例3】权利要求1：一种可见光激发的光催化材料，包括Bi2WO6，其特征在于将Pd、Pt、Au、Ag、Cu或Ni中任意一种金属以硝酸盐的形式负载在Bi2WO6上。</strong></p>
-<p>说明书实施例1记载了纯Bi2WO6的制备及其用于光催化抗菌活性达到95%以上；实施例2记载了不同量的Ag离子负载的Bi2WO6的制备及其用于光催化抗菌活性性能；实施例3和4分别记载了Ni和Cu离子负载的Bi2WO6的制备及其用于光催化抗菌性能。</p>
-<p>对比文件1公开了一种负载Ag的Bi2WO6可见光催化剂，为了克服新颖性和创造性的缺陷，申请人删除Pd、Pt、Au、Ag的技术方案，仅保留Cu和Ni的技术方案，并在意见陈述中指出： Ag对细菌的杀抑效果很好，但杀抑霉菌的效果较差，而Cu 和Ni杀抑霉菌的能力要高于Ag，因此，一般来说，Cu 和Ni作为活性组分负载到Bi2WO6上后，材料体系不仅具有良好的杀抑各种细菌的功能，同时还能有效地抑制霉菌、酵母菌的繁殖，对于那些灭菌要求较高的产品而言是有优势的，可全面杀抑多种有害微生物。</p>
-<p>但是，原说明书中并没有记载Cu 和Ni杀抑霉菌的能力要高于Ag的任何技术效果或数据，而只是记载了各自总体上的杀菌效果，同时，没有证据表明Cu和Ni杀抑霉菌的能力要高于Ag，因此，申请人的意见陈述难以证明权利要求1的创造性。</p>
-<p>相反的，对于该“杀抑霉菌”的技术效果，如果申请人在撰写申请文件时，就对该技术效果是否能够使发明具有创造性做出预期，并将证明其技术效果的试验数据记载在说明书具体实施例部分，那么，上述实验数据将作为有利证据以证实本发明的技术效果。</p>
-<p>同时，申请人还应当注意，对于申请文件中所记载的预料不到的技术效果应当是发明要求保护的技术方案所具有的，是在发明要求保护的整个范围内都可以达到的；也就是说，导致产生该预料不到的技术效果的技术特征也要记载在发明要求保护的技术方案中。</p>
-<p>另外，在说明书中记载技术效果对应的具体效果例还具有另一重要作用，当申请人需要提供对比试验效果的证据时，对比试验效果证据必须针对在原申请文件中明确记载且给出了相应试验数据的技术效果；也就是说，如果在原始申请中对所述技术效果的试验数据进行了记载，那么申请人就容易给出所述技术效果的对比试验效果，使得申请人在意见陈述书中能够给予更有利的证据。相反的，如果原说明书中没有效果试验证明发明某个方面或某种程度的技术效果，则申请人在申请日后或答复审查意见时提供的对比试验数据或效果实施例以证明上述技术效果是难以被审查员接受的。同时，还应当注意的是，如果说明书中仅对该技术效果给出了结论性或断言性的描述却没有相应的试验效果数据，那么容易导致其技术效果无法判断，从而无法对其创造性进行判断，最终使得专利权遭受损失。</p>
-<p><strong>三、结论</strong></p>
-<p>为了使发明专利申请满足创造性的规定或克服创造性的缺陷，申请人在专利申请撰写时，就需要对发明申请的技术领域进行充分的检索，从而对发明的创造性做出预期，并根据该预期在申请文件中补充必要的内容。这不仅有利于审查员认识到本申请的创造性所在，而且为申请人在后续的专利审批程序提供有利保障。</p>
-<p><strong>以下是笔者对催化剂领域专利申请的撰写给出几点建议：</strong></p>
-<p>（1）分析发明技术方案中的发明点实质，并对与发明点相关的技术问题进行探究，从而对涉及发明点实质的技术方案进行完整、清楚、适度的概括。在兼顾发明内容具有创造性的同时，获得最佳的专利权保护范围。</p>
-<p>（2）对发明的技术领域进行充分检索，判断技术方案对现有技术的贡献所在，尽可能寻找最接近的现有技术，采用对比实施例作为有利证据区别于现有技术，以证明发明相对于现有技术具有创造性，有利于审查员认识到本申请的创造性所在。</p>
-<p>（3）申请人在重视技术秘密保护的同时，也应当对发明创造性做出重要贡献的关键性技术效果进行记载，只有结论性或断言性的描述是不够的，还要对关键性技术效果所对应的效果实施例进行记载，其不仅为创造性判断提供有利证明，而且对于后续审查意见通知书的答复也提供了重要依据。</p>
-<p><strong>李晶晶 国家知识产权局专利局专利审查协作北京中心；王成荫 国家知识产权局专利局专利审查协作北京中心发表</strong><br>
-<strong>来源：中国知识产权杂志</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>//post/hello-world.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>几种不同类型发明的创造性判断</title>
+      <link href="//post/20220712-chuangzaoxing.html"/>
+      <url>//post/20220712-chuangzaoxing.html</url>
+      
+        <content type="html"><![CDATA[<p>应当注意的是，本节中发明类型的划分主要是依据发明与最接近的现有技术的区别特征的特点作出的，这种划分仅是参考性的，审查员在审查申请案时，不要生搬硬套，而要根据每项发明的具体情况，客观地做出判断。</p><p>以下就几种不同类型发明的创造性判断举例说明。</p><h3 id="01-开拓性发明">01 开拓性发明</h3><p>开拓性发明，是指一种全新的技术方案，在技术史上未曾有过先例，它为人类科学技术在某个时期的发展开创了新纪元。</p><p>开拓性发明同现有技术相比，具有突出的实质性特点和显著的进步，具备创造性。例如，中国的四大发明–指南针、造纸术、活字印刷术和火药。此外，作为开拓性发明的例子还有:蒸汽机、白炽灯、收音机、雷达、激光器、利用计算机实现汉字输入等。</p><h3 id="02-组合发明">02 组合发明</h3><p>组合发明，是指将某些技术方案进行组合，构成一项新的技术方案，以解决现有技术客观存在的技术问题。</p><p>在进行组合发明创造性的判断时通常需要考虑:组合后的各技术特征在功能上是否彼此相互支持、组合的难易程度、现有技术中是否存在组合的启示以及组合后的技术效果等。</p><h5 id="2-1-显而易见的组合">2.1 显而易见的组合</h5><p>如果要求保护的发明仅仅是将某些已知产品或方法组合或连接在一起，各自以其常规的方式工作，而且总的技术效果是各组合部分效果之总和，组合后的各技术特征之间在功能上无相互作用关系，仅仅是一种简单的叠加，则这种组合发明不具备创造性。</p><p>例如，一项带有电子表的圆珠笔的发明，发明的内容是将已知的电子表安装在已知的圆珠笔的笔身上。将电子表同圆珠笔组合后，两者仍各自以其常规的方式工作，在功能上没有相互作用关系，只是一种简单的叠加，因而这种组合发明不具备创造性。</p><p>此外，如果组合仅仅是公知结构的变型，或者组合处于常规技术继续发展的范围之内，而没有取得预料不到的技术效果，则这样的组合发明不具备创造性。</p><h5 id="2-2-非显而易见的组合">2.2 非显而易见的组合</h5><p>如果组合的各技术特征在功能上彼此支持，并取得了新的技术效果;或者说组合后的技术效果比每个技术特征效果的总和更优越，则这种组合具有突出的实质性特点和显著的进步，发明具备创造性。其中组合发明的每个单独的技术特征本身是否完全或部分已知并不影响对该发明创造性的评价。</p><p>例如，一项“深冷处理及化学镀镍一磷稀土工艺”的发明，发明的内容是将公知的深冷处理和化学镀相互组合。现有技术在深冷处理后需要对工件采用非常规温度回火处理，以消除应力，稳定组织和性能。本发明在深冷处理后，对工件不作回火或时效处理，而是在80℃士10℃的镀液中进行化学镀，这不但省去了所说的回火或时效处理，还使该工件仍具有稳定的基体组织以及耐磨、耐蚀并与基体结合良好的镀层，这种组合发明的技术效果，对本领域的技术人员来说，预先是难以想到的，因而，该发明具备创造性。</p><h3 id="03-选择发明">03 选择发明</h3><p>选择发明，是指从现有技术中公开的宽范围中，有目的地选出现有技术中未提到的窄范围或个体的发明。</p><p>在进行选择发明创造性的判断时，选择所带来的预料不到的技术效果是考虑的主要因素。</p><p><strong>1）如果发明仅是从一些已知的可能性中进行选择，或者发明仅仅是从一些具有相同可能性的技术方案中选出一种， 而选出的方案未能取得预料不到的技术效果，则该发明不具备创造性。</strong></p><p>例如，现有技术中存在很多加热的方法，一项发明是在已知的采用加热的化学反应中选用一种公知的电加热法，该选择发明没有取得预料不到的技术效果，因而该发明不具备创造性。</p><p><strong>2）如果发明是在可能的、有限的范围内选择具体的尺寸、温度范围或者其他参数，而这些选择可以由本领域的技术人员通过常规手段得到并且没有产生预料不到的技术效果，则该发明不具备创造性。</strong></p><p>例如，一项已知反应方法的发明，其特征在于规定一种惰性气体的流速，而确定流速是本领域的技术人员能够通过常规计算得到的，因而该发明不具备创造性。</p><p><strong>3）如果发明是可以从现有技术中直接推导出来的选择，则该发明不具备创造性。</strong></p><p>例如，一项改进组合物Y的热稳定性的发明，其特征在于确定了组合物Y中某组分X的最低含量，实际上，该含量可以从组分X的含量与组合物Y的热稳定性关系曲线中推导出来，因而该发明不具备创造性。</p><p><strong>4）如果选择使得发明取得了预料不到的技术效果，则该发明具有突出的实质性特点和显著的进步，具备创造性。</strong></p><p>例如，在一份制备硫代氯甲酸的现有技术对比文件中，催化剂羧酸酰胺和/或尿素相对于原料硫醇，其用量比大于0、小于等于100%(mol);在给出的例子中，催化剂用量比为2% (mol) ~13% (mol)，并且指出催化剂用量比 从2% (mol) 起，产率开始提高;此外，一般专业人员为提高产率，也总是采用提高催化剂用量比的办法。一项制备硫代氯甲酸方法的选择发明，采用了较小的催化剂用量比 (0.02% (mol) ~0.2% (mol))， 提高产率11.6%~35.7%，大大超出了预料的产率范围，并且还简化了对反应物的处理工艺。这说明，该发明选择的技术方案，产生了预料不到的技术效果，因而该发明具备创造性。</p><h3 id="04-转用发明">04 转用发明</h3><p>转用发明，是指将某一技术领域的现有技术转用到其他技术领域中的发明。</p><p>在进行转用发明的创造性判断时通常需要考虑:转用的技术领域的远近、是否存在相应的技术启示、转用的难易程度、是否需要克服技术上的困难、转用所带来的技术效果等。</p><p><strong>1）如果转用是在类似的或者相近的技术领域之间进行的，并且未产生预料不到的技术效果，则这种转用发明不具备创造性。</strong></p><p>例如，将用于柜子的支撑结构转用到桌子的支撑，这种转用发明不具备创造性。</p><p><strong>2）如果这种转用能够产生预料不到的技术效果，或者克服了原技术领域中未曾遇到的困难，则这种转用发明具有突出的实质性特点和显著的进步，具备创造性。</strong></p><p>例如，一项潜艇副翼的发明，现有技术中潜艇在潜入水中时是靠自重和水对它产生的浮力相平衡停留在任意点上，上升时靠操纵水平舱产生浮力，而飞机在航行中完全是靠主翼产生的浮力浮在空中，发明借鉴了飞机中的技术手段，将飞机的主翼用于潜艇，使潜艇在起副翼作用的可动板作用下产生升浮力或沉降力，从而极大地改善了潜艇的升降性能。由于将空中技术运用到水中需克服许多技术上的困难，且该发明取得了极好的效果，所以该发明具备创造性。</p><h3 id="05-已知产品的新用途发明">05 已知产品的新用途发明</h3><p>已知产品的新用途发明，是指将已知产品用于新的目的的发明。</p><p>在进行已知产品新用途发明的创造性判断时通常需要考虑:新用途与现有用途技术领域的远近、新用途所带来的技术效果等。</p><p><strong>1）如果新的用途仅仅是使用了已知材料的已知的性质，则该用途发明不具备创造性。</strong></p><p>例如，将作为润滑油的已知组合物在同一技术领域中用作切削剂，这种用途发明不具备创造性。</p><p><strong>2）如果新的用途是利用了已知产品新发现的性质，并且产生了预料不到的技术效果，则这种用途发明具有突出的实质性特点和显著的进步，具备创造性。</strong></p><p>例如，将作为木材杀菌剂的五氯酚制剂用作除草剂而取得了预料不到的技术效果，该用途发明具备创造性。</p><h3 id="06-要素变更的发明">06 要素变更的发明</h3><p>要素变更的发明，包括要素关系改变的发明、要素替代的发明和要素省略的发明。</p><p>在进行要素变更发明的创造性判断时通常需要考虑:要素关系的改变、要素替代和省略是否存在技术启示、其技术效果是否可以预料等。</p><h4 id="6-1-要素关系改变的发明">6.1 要素关系改变的发明</h4><p>要素关系改变的发明，是指发明与现有技术相比，其形状、尺寸、比例、位置及作用关系等发生了变化。</p><p><strong>1）如果要索关系的改变没有导致发明效果、功能及用途的变化，或者发明效果、功能及用途的变化是可预料到的，则发明不具备创造性。</strong></p><p>例如，现有技术公开了一种刻度盘固定不动、指针转动式的测量仪表，一项发明是指针不动而刻度盘转动的同类测量仪表，该发明与现有技术之间的区别仅是要素关系的调换，即“动静转换”。这种转换并未产生预料不到的技术效果，所以这种发明不具备创造性。</p><p><strong>2）如果要素关系的改变导致发明产生了预料不到的技术效果，则发明具有突出的实质性特点和显著的进步，具备创造性。</strong></p><p>例如，一项有关剪草机的发明，其特征在于刀片斜角与公知的不同，其斜角可以保证刀片的自动研磨，而现有技术中所用刀片的角度没有自动研磨的效果。该发明通过改变要素关系，产生了预料不到的技术效果，因此具备创造性。</p><h4 id="6-2-要素替代的发明">6.2 要素替代的发明</h4><p>要素替代的发明，是指已知产品或方法的某一要素由其他已知要素替代的发明。</p><p><strong>1）如果发明是相同功能的已知手段的等效替代，或者是为解决同一技术问题，用已知最新研制出的具有相同功能的材料替代公知产品中的相应材料，或者是用某一公知材料替代公知产品中的某材料，而这种公知材料的类似应用是已知的，且没有产生预料不到的技术效果，则该发明不具备创造性。</strong></p><p>例如，一项涉及泵的发明，与现有技术相比，该发明中的动力源是液压马达替代了现有技术中使用的电机，这种等效替代的发明不具备创造性。</p><p><strong>2）如果要素的替代能使发明产生预料不到的技术效果，则该发明具有突出的实质性特点和显著的进步，具备创造性。</strong></p><h4 id="6-3-要素省略的发明">6.3 要素省略的发明</h4><p>要素省略的发明，是指省去已知产品或者方法中的某一项或多项要素的发明。</p><p><strong>1）如果发明省去一项或多项要素后其功能也相应地消失，则该发明不具备创造性。</strong></p><p>例如，一种涂料组合物发明，与现有技术的区别在于不含防冻剂。由于取消使用防冻剂后，该涂料组合物的防冻效果也相应消失，因而该发明不具备创造性。</p><p><strong>2）如果发明与现有技术相比，发明省去一项或多项要素(例如，一项产品发明省去了一个或多个零、部件或者一项方法发明省去一步或多步工序)后，依然保持原有的全部功能，或者带来预料不到的技术效果，则具有突出的实质性特点和显著的进步，该发明具备创造性。</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 创造性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>催化剂领域发明专利申请的撰写与创造性审查</title>
+      <link href="//post/220619cuihuaji.html"/>
+      <url>//post/220619cuihuaji.html</url>
+      
+        <content type="html"><![CDATA[<p>2015-04-20</p><p>本文介绍了催化剂领域发明专利申请的撰写方式对其创造性判断的重要影响。作者认为在可预见性较低的催化剂领域，发明专利申请中记载的技术问题和技术效果是评价创造性的重要依据。本文通过分析三个实际案例的创造性审查过程，从不同的方面提出催化剂领域专利申请文件的撰写技巧。并指出申请人在专利申请撰写时即需进行充分的检索从而对发明的创造性做出预期、并根据该预期在申请文件中补充必要的关于技术问题和技术效果方面的内容，这能够为申请人在后续的实质审查过程中提供有利保障。</p><p>《专利法》第22条第3款规定“创造性，是指与现有技术相比，该发明具有突出的实质性特点和显著的进步”。《专利审查指南》规定：在评价发明是否具备创造性时，审查员不仅要考虑发明的技术方案本身，而且还要考虑发明所属技术领域、所解决的技术问题和产生的技术效果，将发明作为一个整体看待。《专利审查指南》中关于“技术问题”有这样的规定：在审查中应当客观分析并确定发明实际解决的技术问题，发明实际解决的技术问题是指为获得更好的技术效果而需对最接近的现有技术进行改进的技术任务。在实际审查过程中，由于审查员所认定的最接近的现有技术可能不同于申请人在说明书中所描述的现有技术。</p><p>《专利审查指南》中关于“技术效果”也进行了描述：在创造性的判断过程中，考虑发明的技术效果有利于正确评价发明的创造性。如果发明与现有技术相比具有预料不到的技术效果，则不必再怀疑其技术方案是否具有突出的实质性特点，可以确定发明具备创造性。但是，对于“预料不到的技术效果”的描述应当是明确并具有依据的。那么，在申请文件撰写时对于技术问题和技术效果应该有怎样的考虑呢？为此，笔者仅以在审查工作中接触较多的催化剂领域的发明专利申请为切入点，探讨在撰写催化剂专利申请文件时对于技术问题和技术效果该如何考虑。</p><span id="more"></span><p><strong>一、催化剂领域的专利申请特点</strong></p><p>近年来，随着催化剂的研究和产业化步伐日趋加快，催化剂领域的专利申请量快速增长，而催化剂本身的结构、物理化学性质、催化作用及其催化反应过程都是极其复杂的，因此，催化剂领域的发明专利申请具有学科渗透性强、可预见性低的特点。催化剂领域创造性的判断往往是专利审查工作的难点之一，针对催化剂领域发明专利申请的特点，其申请文件中涉及的所要解决的技术问题以及取得的技术效果是审查员判断创造性时需要着重考虑的内容，因此，这部分内容也当然地成为申请人撰写该领域申请文件时应该重点关注的内容。</p><p>然而在多年的专利审查实践中，笔者注意到：由于催化剂领域发明专利申请撰写的缺陷，导致申请人在实质审查过程中，难以对发明申请做出有利的修改或者做出有理有据的意见陈述，最终难以获得专利权。而事实上，这样的未被授权的专利申请实质上是具有创造性的，而仅仅是由于申请文件撰写的先天的缺陷而导致了可能无法弥补的后果。因此，提高催化剂领域专利申请文件的撰写质量是必要的也是重要的。</p><p>本文从创造性审查的角度出发，通过分析三个催化剂领域的实际案例，从三个不同的方面提出催化剂领域专利申请文件的撰写技巧。</p><p><strong>二、实际案例</strong></p><p><strong>1、重视与发明专利的发明点相关的技术问题</strong></p><p>为了使专利权保护范围最大化，申请人通常会将保护范围最大的技术方案记载在发明专利申请中，并着重对该技术方案进行清楚、完整地撰写。具体到催化剂领域，申请人更希望获得对催化剂产品的保护，也相对重视催化剂产品权利要求的撰写。而对于有可能涉及发明实际发明点的催化剂的制备方法则往往忽略，要么没有将其写入权利要求，要么只是在申请文件中简单地撰写其制备方法。</p><p><strong>【案例1】权利要求1：一种用于正丁烯双键迁移制丁烯-2的镍基催化剂，以重量百分比计包括以下组分：</strong></p><p><strong>a)5～75％的镍或其氧化物；</strong></p><p><strong>b)1～10％的钛或其氧化物；</strong></p><p><strong>c)15～95％的载体氧化铝；</strong></p><p>本案的权利要求书中仅涉及镍基催化剂的产品权利要求，并未对催化剂的制备方法要求保护；本申请说明书中记载的所要解决的技术问题是提供一种具有正丁烯异构化率高、总烯烃收率高、耐硫性能高的催化剂。同时，在说明书的有益的技术效果部分有这样的涉及催化剂制备方法的记载：“本发明的镍基催化剂制备方法，在氧化铝溶胶中加入镍盐水溶液或镍氨络合液，经静止老化或加热分解络合镍离子得到镍铝凝胶，经焙烧、还原可得到Ni/Al2O3催化剂，镍离子吸附于高比表面积的氧化铝溶胶粒子，纳米溶胶粒子提供了大量的表面积以分散镍组分，得到高分散高活性的镍基催化剂，催化剂上的微孔提供了小晶粒镍粒子的“镶嵌空间”，束缚了镍粒子的迁移，提高了催化剂的稳定性”。</p><p>同时，本案的实施例对权利要求1请求保护的包含Ni、Ti、氧化铝组分的催化剂的制备方法进行了详细记载，其包括具体的制备步骤，具体的原料，由点值限定的原料加入量和反应条件参数等。</p><p>不难看出，本案的发明点实质在于催化剂的制备方法，该发明点实质所对应的技术问题是提供一种新的制备方法，即在氧化铝溶胶中添加活性组分经静止老化或加热分解得到催化剂前躯体凝胶，经焙烧、还原得到催化剂产品，采用该制备方法制备得到的催化剂具有优异的催化性能。但是，发明内容部分并未记载该技术问题，且对于制备方法的记载仅仅是简单的描述，其并不是完整的技术方案，也没有涉及引入另一活性组分Ti的步骤，更没有涉及活性组分Ti何时、以何种形式加入。</p><p>审查员在第一次审查意见通知书中指出：权利要求1相对于对比文件1不具备创造性；申请人为了克服创造性的缺陷，对权利要求1进行修改，由于本申请催化剂的制备方法不同于对比文件1的制备方法，考虑将制备方法限定到权利要求中是常见的修改方式。</p><p>就本案而言，说明书背景技术部分对于本发明的技术领域描述的足够详细，可以看出申请人对该技术领域的发展进行了充分的检索，同时，在发明的有益的技术效果部分也对本发明的发明点进行了充分的解释和说明。也就是说，申请人知晓本案的发明点在于催化剂的制备方法，但是，为了寻求最大的保护范围，申请人仅对涉及催化剂产品的技术方案进行了概括限定，没有对发明点实质所对应的技术问题进行深究，从而忽略了对涉及发明点实质的技术方案的考虑；因此，在撰写申请文件时，申请人没有将与发明点相关的技术问题写入申请文件中，更没有对涉及发明点实质的催化剂制备方法的技术方案进行完整的概括记载。</p><p>对申请文件的修改应该符合《专利法》第33条的规定，本案的说明书发明内容部分并没有对催化剂的制备方法进行适度的概括，导致申请人在修改权利要求书时，只能选择对实施例中的具体的催化剂的制备方法进行概括后补入产品权利要求中，或直接将实施例中所记载的具体的制备方法补入产品权利要求中。由于催化剂领域的发明专利申请在实施例部分所记载的均为具体的产品以及参数，因此，采用概括的方式很容易造成修改超范围的问题，而采用将整体实施例补入权利要求中进行限定，则必然地会导致保护范围的大大缩小。</p><p>为了避免上述问题，申请人在撰写申请文件时，应当首先考虑其发明点是什么，从发明点实质出发，寻找其真正解决的技术问题，从而将表明发明点的特征写入权利要求书或者说明书中，为后续的意见陈述或申请文件的修改留有充分的余地，保证获得合理的保护范围。</p><p>因此，在撰写说明书时，不仅要对发明专利申请区别于现有技术的发明点实质有所把握，还应当对其后期的修改进行考虑，在撰写说明书的发明内容时，要善于将保护范围由点扩展到面，对涉及发明点实质的技术方案引起足够的重视。</p><p><strong>2、对于创造性判断具有重要作用的对比实施例</strong></p><p>催化剂领域的审查中，不同活性组分之间是否具有“协同作用”是判断发明创造性的重要判断依据。催化剂在化学组成、离子价态、酸碱性、晶体及表面结构、孔分布、机械强度以及最终催化剂的活性、选择性、寿命及成本高低均是“协同作用”的考虑因素。而这些考虑因素最直观的表达就是申请人所做的各种表征数据以及活性等性能测试的对比实施例。因此，在撰写说明书具体实施例时，申请人需要对上述具有表征“协同作用”的对比实施例引起重视。</p><p><strong>【案例2】：权利要求1：一种用于选择性催化还原氮氧化物的催化剂，其特征在于载体为TiO2，活性组分为Sb2O3 -V2O5 -Nb2O5复合氧化物。</strong></p><p>权利要求1与最接近的现有技术的区别在于权利要求1限定了加入的活性组分为Sb2O3 -V2O5 -Nb2O5氧化物，而对比文件1中为WO3- V2O5 -Nb2O5氧化物。对于上述区别技术特征，审查员又检索到了对比文件2，其公开了一种用于NH3-SCR去除氮氧化物的催化剂，发现在SO2存在条件下添加Sb的V2O5- TiO2催化剂活性比含W的V2O5- TiO2的催化活性更高，即Sb-V2O5/TiO2可以取代W-V2O5/TiO2提高催化剂活性并增强催化剂在低温下抗SO2的中毒性能；据此，审查员采用对比文件1结合对比文件2评述了本案权利要求1的创造性。</p><p>申请人在答复审查意见通知书时指出“本申请的催化剂中，Sb与Nb，分别补充了NO选择性催化还原反应所需的催化剂两个基本性质，即：氧化还原性能及表面酸性，添加剂中的Sb能够优先提高催化剂的氧化还原性能，而Nb则能够提高催化剂表面酸性，增加催化剂对还原剂NH3的吸附能力，所以添加剂中的Sb和Nb是不可或缺的两个组分，两者的同时存在才能够提高催化剂的活性，使催化剂的活性显著提高，活性窗口加宽，二者具有协同作用。”但是，在原始申请的说明书实施例部分并未对该“协同作用”进行记载，更没有记载具体实验数据，同时，申请人的意见陈述也难以证明权利要求1具有创造性。</p><p>相反，如果申请人在撰写申请文件之前，就对本发明的技术方案进行充分的检索，对技术方案的创造性做出合理预期，认识到本发明与现有技术的改进点在于同时使用了两种活性组分并产生了“协同效应”，将描述“协同效应”的具体实施例记载在说明书中，将更有利于申请人在创造性问题上的陈述说理。</p><p>常见的描述“协同作用”的具体实施例包括对比例，具体到本案，申请人在撰写说明书实施例时，可以将同时添加Sb和Nb的催化剂与单独添加Sb或Nb的催化剂进行催化活性的比较，通过对比试验例来证明Sb2O3和Nb2O5发生了相互作用，而不是仅仅单独表现出其各自的性能，而且这种相互作用的物质再与V2O5发生协同效应，使催化剂的活性显著提高，活性窗口加宽。</p><p>由此可见，在申请文件撰写之初，就需要对发明技术方案的创造性做出预期，通过在说明书中记载有效的对比实施例，不仅有利于实质审查，而且也为专利申请在后续的专利权保护时提供保障，更有利于专利权的稳定。</p><p><strong>3、发明获得的技术效果所对应的效果实施例</strong></p><p>通常，申请人在撰写说明书时，会在说明书的发明内容部分记载发明所取得的技术效果，或在答复审查意见通知书时，对发明所具有的技术效果进行详细的陈述，以通过上述关键性技术效果区别于现有技术，来证明发明具有创造性。但是，对于催化剂领域的申请来说，体现技术效果的有利载体是实验数据，因此，申请人在撰写说明书时，应当对上述关键性技术效果所对应的效果实施例有所考虑，而非仅仅是技术效果的简单记载。</p><p><strong>【案例3】权利要求1：一种可见光激发的光催化材料，包括Bi2WO6，其特征在于将Pd、Pt、Au、Ag、Cu或Ni中任意一种金属以硝酸盐的形式负载在Bi2WO6上。</strong></p><p>说明书实施例1记载了纯Bi2WO6的制备及其用于光催化抗菌活性达到95%以上；实施例2记载了不同量的Ag离子负载的Bi2WO6的制备及其用于光催化抗菌活性性能；实施例3和4分别记载了Ni和Cu离子负载的Bi2WO6的制备及其用于光催化抗菌性能。</p><p>对比文件1公开了一种负载Ag的Bi2WO6可见光催化剂，为了克服新颖性和创造性的缺陷，申请人删除Pd、Pt、Au、Ag的技术方案，仅保留Cu和Ni的技术方案，并在意见陈述中指出： Ag对细菌的杀抑效果很好，但杀抑霉菌的效果较差，而Cu 和Ni杀抑霉菌的能力要高于Ag，因此，一般来说，Cu 和Ni作为活性组分负载到Bi2WO6上后，材料体系不仅具有良好的杀抑各种细菌的功能，同时还能有效地抑制霉菌、酵母菌的繁殖，对于那些灭菌要求较高的产品而言是有优势的，可全面杀抑多种有害微生物。</p><p>但是，原说明书中并没有记载Cu 和Ni杀抑霉菌的能力要高于Ag的任何技术效果或数据，而只是记载了各自总体上的杀菌效果，同时，没有证据表明Cu和Ni杀抑霉菌的能力要高于Ag，因此，申请人的意见陈述难以证明权利要求1的创造性。</p><p>相反的，对于该“杀抑霉菌”的技术效果，如果申请人在撰写申请文件时，就对该技术效果是否能够使发明具有创造性做出预期，并将证明其技术效果的试验数据记载在说明书具体实施例部分，那么，上述实验数据将作为有利证据以证实本发明的技术效果。</p><p>同时，申请人还应当注意，对于申请文件中所记载的预料不到的技术效果应当是发明要求保护的技术方案所具有的，是在发明要求保护的整个范围内都可以达到的；也就是说，导致产生该预料不到的技术效果的技术特征也要记载在发明要求保护的技术方案中。</p><p>另外，在说明书中记载技术效果对应的具体效果例还具有另一重要作用，当申请人需要提供对比试验效果的证据时，对比试验效果证据必须针对在原申请文件中明确记载且给出了相应试验数据的技术效果；也就是说，如果在原始申请中对所述技术效果的试验数据进行了记载，那么申请人就容易给出所述技术效果的对比试验效果，使得申请人在意见陈述书中能够给予更有利的证据。相反的，如果原说明书中没有效果试验证明发明某个方面或某种程度的技术效果，则申请人在申请日后或答复审查意见时提供的对比试验数据或效果实施例以证明上述技术效果是难以被审查员接受的。同时，还应当注意的是，如果说明书中仅对该技术效果给出了结论性或断言性的描述却没有相应的试验效果数据，那么容易导致其技术效果无法判断，从而无法对其创造性进行判断，最终使得专利权遭受损失。</p><p><strong>三、结论</strong></p><p>为了使发明专利申请满足创造性的规定或克服创造性的缺陷，申请人在专利申请撰写时，就需要对发明申请的技术领域进行充分的检索，从而对发明的创造性做出预期，并根据该预期在申请文件中补充必要的内容。这不仅有利于审查员认识到本申请的创造性所在，而且为申请人在后续的专利审批程序提供有利保障。</p><p><strong>以下是笔者对催化剂领域专利申请的撰写给出几点建议：</strong></p><p>（1）分析发明技术方案中的发明点实质，并对与发明点相关的技术问题进行探究，从而对涉及发明点实质的技术方案进行完整、清楚、适度的概括。在兼顾发明内容具有创造性的同时，获得最佳的专利权保护范围。</p><p>（2）对发明的技术领域进行充分检索，判断技术方案对现有技术的贡献所在，尽可能寻找最接近的现有技术，采用对比实施例作为有利证据区别于现有技术，以证明发明相对于现有技术具有创造性，有利于审查员认识到本申请的创造性所在。</p><p>（3）申请人在重视技术秘密保护的同时，也应当对发明创造性做出重要贡献的关键性技术效果进行记载，只有结论性或断言性的描述是不够的，还要对关键性技术效果所对应的效果实施例进行记载，其不仅为创造性判断提供有利证明，而且对于后续审查意见通知书的答复也提供了重要依据。</p><p><strong>李晶晶 国家知识产权局专利局专利审查协作北京中心；王成荫 国家知识产权局专利局专利审查协作北京中心发表</strong><br><strong>来源：中国知识产权杂志</strong></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建博客：GitHub Pages，Hexo，Aurora</title>
+      <link href="//post/220321-githubpages.html"/>
+      <url>//post/220321-githubpages.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>介绍</strong></p><p>本地系统 windows 10。博客使用 GitHub Pages 网站托管，Hexo 博客框架，Hexo 主题选用 Aurora。</p><p>使用博客时，用Markdown编辑器写内容。hexo 会将 md 文件生成静态网页，并发布至 GitHub，通过 GitHub Pages 所给二级域名直接访问。</p><p>GitHub Pages</p><blockquote><p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p><p>Git是一个分布式版本控制系统，而Github是一个集成了git的服务，它可以以网页或者客户端的形式，帮助用户把git本地的数据提交到远程的服务器里。</p></blockquote><p>Hexo 博客框架</p><blockquote><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p></blockquote><span id="more"></span><p><strong>第一步</strong></p><ol><li><p>下载 Node.js <a href="https://nodejs.org/en/">download</a>；安装；选默认配置；打开命令行输入<code>node -v</code>看到版本号即安装无误；</p></li><li><p>下载 Git <a href="https://git-scm.com/">download</a>；默认配置安装；命令行 <code>git --version</code>，确认版本；</p><ul><li><p>安装完 Git 会得到 Git Bash 命令行工具；</p></li><li><p>Git 是一个分布式版本控制系统，而 Github 是一个集成了 Git 的服务。Git 可以帮助用户把本地的数据提交到远程的服务器里；</p></li></ul></li><li><p>准备一个github.com账户，例如：用户名: zhangsan, email: <a href="mailto:zhangsan@abc.com">zhangsan@abc.com</a></p></li></ol><p><strong>建立博客</strong></p><ul><li><p>新建文件夹作为博客的根目录，例如：d:\myblog；</p></li><li><p>打开 d:\myblog目录，在文件夹空白区域右击选择 Git Bash Here；</p></li><li><p>命令行：<code>npm install hexo -cli -g</code>;  安装 Hexo，其中参数 -g 是 global，全局安装；</p></li><li><p>命令行：<code>hexo -v</code>；查看是否安装成功</p></li><li><p>命令行：在d:\myblog下，运行<code>hexo init</code>初始化；现在可以看到myblog目录下多了很多文件。</p></li><li><p>命令行：<code>hexo s</code>；启动hexo博客服务。</p><img src="/post/220321-githubpages/image-20220322150024246.png" class="" title="image-20220322150024246"></li><li><p>浏览器访问 <a href="http://localhost:4000/">http://localhost:4000/</a> 可以看到博客界面了。</p></li></ul><p><strong>将本地博客同步至 <a href="http://Github.com">Github.com</a></strong></p><ul><li><p>登录 <a href="http://github.com">github.com</a>;</p></li><li><p>“github 首页 - New - create a new repository”，新建一个仓库；</p><ul><li><p>owner：zhangsan; //输入自己的用户名，最好和 github 用户名相同；</p></li><li><p>repository name：zhangsan；</p></li><li><p>Description：随便写；</p></li><li><p>选中 public；</p></li><li><p>选中 “Add a README file”；</p></li><li><p>点击 “Create repository”。</p></li></ul></li><li><p>使用 ssh 生成密钥对，用以和本地连接；</p><ul><li>打开 “d:\myblog” 文件夹，空白处右击鼠标，选择 “Git bash here”；</li><li>命令行：<code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code>；新建密钥对；<ul><li>“Enter file in which to save the key”；直接回车，文件名默认为id_ras.pub。若此处输入了新文件名，后续需要调整路径。最终的结果，id_ras.pub应处于 “c:\users\用户名\.ssh” 目录下；</li><li>“Enter passphrase”；直接回车，则之后的ssh连接不再需要密码。</li></ul></li></ul></li><li><p>公钥放至github</p><ul><li>登录 <a href="http://github.com">github.com</a>；</li><li>“点击自己头像 - setting - ssh and GPG keys”；</li><li>选择 “New SSH Key”；将本地 id_ras.pub文件内容copy 至此，保存；</li></ul></li><li><p>在 Git Bash 中配置 <a href="http://github.com">github.com</a> 账户信息</p></li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"zhangsan"</span><span class="token function">git</span> config --global user.email <span class="token string">"zhangsan@abc.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ul><li><p>测试本地和 <a href="http://github.com">github.com</a> 之间的连接；</p><ul><li><p>Git Bash命令行：<code>ssh -T git@github.com</code>；</p><p>若成功，会显示：“Hi username, You’ve successfully authenticated, but GitHub does not provide shell access.”</p><p>若报错：&quot; <a href="mailto:git@github.com">git@github.com</a>: Permission denied ( publickey ) &quot;，应是id_ras.pub文件位置问题。</p></li></ul></li><li><p>Hexo 配置修改</p><ul><li><p>文本编辑器打开 “d:\myblog_config.yml” 文件</p></li><li><p>“#deployment” 和 “#url” 部分，做如下修改：</p></li></ul></li></ul><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt"># Deployment## Docs: https://hexo.io/docs/one-command-deploymentdeploy:  type: 'git'  repo: git@github.com:zhangsan/zhangsan.github.io.git  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none"># URL## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;url: https:&#x2F;&#x2F;zhangsan.github.io# 注意是https<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ul><li>安装 hexo-deployer-git<ul><li>Git Bash 输入 <code>npm install hexo-deployer-git --save</code>；</li></ul></li><li>这样设置就做好了。之后使用下列命令将本地博客部署至 <a href="http://github.com">github.com</a>；</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token comment">#清除旧页面</span>hexo g <span class="token comment">#生成新页面</span>hexo d <span class="token comment">#本地同步至 GitHub Pages</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li>通过浏览器访问 “<a href="http://zhangsan.github.io">zhangsan.github.io</a>” 。</li></ul><p><strong>博客使用</strong></p><p>写博客，</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token builtin class-name">test</span>  <span class="token comment">#生成一个新文件：\source\_posts\test.md；</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>重建页面并运行本地server</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo cleanhexo ghexo s <span class="token comment">#本地服务器运行，即预览</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>部署至 GitHub Pages</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo cleanhexo ghexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>参考：hexo docs <a href="https://hexo.io/zh-cn/docs/github-pages.html">https://hexo.io/zh-cn/docs/github-pages.html</a></p><p>写博客时，<a href="http://xn--test-4u7hr20hp5lm84a.md">直接编辑test.md</a>，或把md文件直接放入&quot;_post&quot;。</p><p>hexo clean 会清除 db.json 和 public 所有内容，</p><p>hexo g 会将source中所有的md文件转为html文件放至public 文件夹。</p><p><strong>Hexo Aurora Theme设置</strong></p><p>安装 Aurora 主题包</p><ul><li>博客根目录下打开 git bash；</li><li><code>npm install hexo-theme-aurora --save</code>；安装aurora主题；</li></ul><p>生成Aurora主题配置</p><ul><li>打开文件夹：<code>d:\myblog\node_modules\hexo-theme-aurora</code>，找到_config.yml，更名为_config.aurora.yml；</li><li>将 _config.aurora.yml 移动到根目录（这时根目录有_config.yml和_config.aurora.yml）；</li></ul><p>_config.yml修改</p><p>修改 <code>permalink</code> 参数为 <code>/post/:title.html</code></p><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># URL## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;url: https:&#x2F;&#x2F;tridiamond.techpermalink: &#x2F;post&#x2F;:title.htmlpermalink_defaults:pretty_urls:  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>把 highlight 的启用改为 false<br>把 prismjs 的启用改为 true<br>把 prismjs 下的 preprocess 改为 false</p><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">highlight:  enable: false  line_number: true  auto_detect: false  tab_replace: &#39;&#39;  wrap: true  hljs: falseprismjs:  enable: true  preprocess: true  line_number: true  tab_replace: &#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>theme 改为 Aurora</p><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># Extensions## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;theme: aurora<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>重新生成并启动本地服务器</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo clean &amp; hexo g &amp; hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>通过 <a href="https://localhost:4000">https://localhost:4000</a> 访问你的博客。</p><p><strong>Gitalk 评论组件</strong></p><p>Gitalk 在_config.aurora.yml中设置。其中，clientID 和 clientsecret 需要从github获取，步骤如下：</p><ul><li>登录github，点击头像，选择 setting；</li><li>选 developer settings；</li><li>选 “OAuth Apps - New OAuth App”；</li><li>Application name：随便取，</li><li>homepage url：填 <a href="https://zhangsan.github.io">https://zhangsan.github.io</a></li><li>description 随便写</li><li>authorization callback URL：此处同homepage url, 注意，都是https</li><li>点 “register application”；</li><li>记录下 clientID 和 clientsecret，对应地填到 _config.aurora.yml 里。</li></ul><p>设置完，重建服务器后，须先登录 <a href="http://github.com">github.com</a> 确认绑定，之后就可以正常评论了。</p><p>Gitalk 仅支持 GitHub 账户登录后进行评论。</p><p>其他 gitalk 参数解释见官方文档：<a href="https://aurora.tridiamond.tech/guide/plugins.html#gitalk">https://aurora.tridiamond.tech/guide/plugins.html#gitalk</a></p><p><strong>参考：</strong></p><p>Hexo themes portal: <a href="https://hexo.io/themes/index.html">https://hexo.io/themes/index.html</a></p><p>Aurora安装配置指南：<a href="https://aurora.tridiamond.tech/zh/guide/getting-started.html">https://aurora.tridiamond.tech/zh/guide/getting-started.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="//post/hello-world.html"/>
+      <url>//post/hello-world.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
