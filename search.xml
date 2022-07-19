@@ -384,10 +384,4 @@ theme: aurora
         <tag>创造性</tag>
       </tags>
   </entry>
-  <entry>
-    <title>test</title>
-    <url>//post/test.html</url>
-    <content><![CDATA[<p>this is a test</p>
-]]></content>
-  </entry>
 </search>
